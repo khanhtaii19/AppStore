@@ -8,7 +8,7 @@ import WelcomePopup from './components/WelcomePopup';
 import Shop from './pages/Shop';
 import ProductDetailView from './pages/ProductDetailView';
 import Admin from './pages/Admin';
-import Login from './pages/LogIn';
+import Login from './pages/Login';
 import { Product, Category, Coupon, User } from './types';
 import { INITIAL_CATEGORIES, INITIAL_PRODUCTS, INITIAL_COUPONS } from './constants';
 
