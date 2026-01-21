@@ -3,6 +3,7 @@ import React from 'react';
 import { ChevronRight, Share2, Bookmark } from 'lucide-react';
 import { DETAILED_POST, BLOG_POSTS } from '../constants';
 
+
 const BlogPost: React.FC = () => {
   const post = DETAILED_POST;
 

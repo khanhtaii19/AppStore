@@ -1,6 +1,79 @@
 
-import { FoodItem, BlogPost } from './types';
+import { Category, Product, Coupon, FoodItem, BlogPost } from './types';
 
+export const INITIAL_CATEGORIES: Category[] = [
+  {
+    id: 'cat-1',
+    name: 'Món Chính',
+    description: 'Các món ăn no nê, đậm đà hương vị truyền thống và hiện đại.',
+    image: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=2080&auto=format&fit=crop'
+  },
+  {
+    id: 'cat-2',
+    name: 'Khai Vị',
+    description: 'Bắt đầu bữa tiệc với những món nhẹ nhàng, kích thích vị giác.',
+    image: 'https://images.unsplash.com/photo-1541529086526-db283c563270?q=80&w=2070&auto=format&fit=crop'
+  },
+  {
+    id: 'cat-3',
+    name: 'Tráng Miệng',
+    description: 'Kết thúc ngọt ngào với các loại bánh và kem đặc sắc.',
+    image: 'https://images.unsplash.com/photo-1563805042-7684c019e1cb?q=80&w=1944&auto=format&fit=crop'
+  }
+];
+
+export const INITIAL_PRODUCTS: Product[] = [
+  {
+    id: 'p-1',
+    categoryId: 'cat-1',
+    name: 'Pizza Hải Sản Pesto',
+    description: 'Sự kết hợp hoàn hảo giữa tôm, mực tươi và sốt pesto xanh mướt.',
+    details: 'Được làm từ bột tươi ủ 24h, nướng trong lò gạch truyền thống. Tôm sú tươi, mực lá cắt khoanh kết hợp cùng phô mai Mozzarella nhập khẩu từ Ý.',
+    price: 220000,
+    salePrice: 185000,
+    image: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=2070&auto=format&fit=crop',
+    promotionText: 'Giảm giá 15% cho thành viên mới'
+  },
+  {
+    id: 'p-2',
+    categoryId: 'cat-1',
+    name: 'Steak Thăn Nội Bò Mỹ',
+    description: 'Thịt thăn mềm tan, phục vụ kèm khoai tây nghiền và sốt vang đỏ.',
+    details: 'Thịt bò Black Angus được chọn lọc kỹ lưỡng, tẩm ướp thảo mộc và nướng Medium-Rare chuẩn vị. Ăn kèm măng tây và cà rốt baby.',
+    price: 450000,
+    image: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=2080&auto=format&fit=crop',
+    promotionText: 'Tặng 1 ly vang đỏ kèm theo'
+  },
+  {
+    id: 'p-3',
+    categoryId: 'cat-3',
+    name: 'Tiramisu Cổ Điển',
+    description: 'Hương vị cà phê nồng nàn quyện cùng lớp kem béo ngậy.',
+    details: 'Bánh được làm theo công thức truyền thống từ vùng Treviso, sử dụng phô mai Mascarpone tươi và bánh sâm panh thấm đẫm Espresso.',
+    price: 85000,
+    salePrice: 75000,
+    image: 'https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?q=80&w=1974&auto=format&fit=crop'
+  }
+];
+
+export const INITIAL_COUPONS: Coupon[] = [
+  {
+    code: 'HELLO2024',
+    discountPercent: 10,
+    limit: 100,
+    usedCount: 5,
+    expiryDate: '2024-12-31'
+  },
+  {
+    code: 'GIAM30',
+    discountPercent: 30,
+    limit: 10,
+    usedCount: 0,
+    expiryDate: '2024-06-30'
+  }
+];
+
+// Re-export old constants for backward compatibility
 export const FEATURED_FOODS: FoodItem[] = [
   {
     id: '1',
@@ -9,13 +82,6 @@ export const FEATURED_FOODS: FoodItem[] = [
     price: '185.000đ',
     image: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=2070&auto=format&fit=crop',
     isBestSeller: true
-  },
-  {
-    id: '2',
-    name: 'Steak Thượng Hạng',
-    description: 'Thịt bò nhập khẩu, nước sốt đặc trưng',
-    price: '250.000đ',
-    image: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=2080&auto=format&fit=crop'
   }
 ];
 
@@ -27,22 +93,6 @@ export const BLOG_POSTS: BlogPost[] = [
     date: '12 Tháng 10, 2023',
     category: 'Mẹo nấu ăn',
     image: 'https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?q=80&w=1974&auto=format&fit=crop'
-  },
-  {
-    id: '2',
-    title: 'Cách làm món bò nướng chuẩn vị nhà hàng 5 sao',
-    excerpt: 'Hướng dẫn chi tiết từng bước ướp thịt và canh lửa để bò mềm tan...',
-    date: '08 Tháng 10, 2023',
-    category: 'Công thức',
-    image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=1974&auto=format&fit=crop'
-  },
-  {
-    id: '3',
-    title: 'Chế độ ăn Eat Clean cho người bận rộn',
-    excerpt: 'Dù công việc có bận rộn đến đâu, bạn vẫn có thể duy trì vóc dáng...',
-    date: '05 Tháng 10, 2023',
-    category: 'Sức khỏe',
-    image: 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=2053&auto=format&fit=crop'
   }
 ];
 
@@ -60,12 +110,7 @@ export const DETAILED_POST: BlogPost = {
     readTime: '8 phút đọc'
   },
   content: [
-    "Xây dựng một chế độ ăn uống lành mạnh không có nghĩa là bạn phải từ bỏ hoàn toàn những món ăn yêu thích. Bí quyết nằm ở sự cân bằng và lựa chọn thực phẩm thông minh mỗi ngày.",
-    "1. Bắt đầu ngày mới với nước lọc: Uống một ly nước ngay sau khi ngủ dậy giúp đánh thức hệ tiêu hóa và cấp ẩm cho cơ thể sau một đêm dài. Đây là thói quen đơn giản nhất nhưng mang lại hiệu quả cực kỳ to lớn cho sức khỏe làn da và tinh thần.",
-    "2. Ưu tiên thực phẩm nguyên bản: Hãy cố gắng lấp đầy 80% đĩa ăn của bạn bằng các loại thực phẩm chưa qua chế biến sâu như rau củ quả tươi, ngũ cốc nguyên hạt và các loại đậu. Những thực phẩm này giữ trọn vẹn vitamin và chất xơ cần thiết.",
-    "\"Sức khỏe không chỉ là việc bạn ăn gì, mà là việc bạn suy nghĩ và thực hiện lối sống đó như thế nào mỗi ngày.\"",
-    "3. Chế độ 5 màu sắc: Mỗi màu sắc trong rau củ đại diện cho một nhóm dưỡng chất khác nhau. Đảm bảo bữa ăn của bạn rực rỡ sắc màu: màu đỏ của cà chua, màu xanh của súp lơ, màu tím của bắp cải tím... Điều này giúp bạn nạp đầy đủ các loại chất chống oxy hóa.",
-    "4. Lắng nghe cơ thể: Hãy ăn khi thấy đói và dừng lại khi cảm thấy vừa đủ (khoảng 80% dạ dày). Việc ăn quá no thường dẫn đến cảm giác mệt mỏi và tích tụ mỡ thừa không cần thiết."
+    "Xây dựng một chế độ ăn uống lành mạnh không có nghĩa là bạn phải từ bỏ hoàn toàn những món ăn yêu thích. Bí quyết nằm ở sự cân bằng và lựa chọn thực phẩm thông minh mỗi ngày."
   ],
   tags: ['#HealthyLife', '#Nutrition', '#FoodTips']
 };
