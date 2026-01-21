@@ -15,7 +15,7 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage, currentUser, o
 
   const navItems = [
     { label: 'Trang chủ', id: 'home', minRole: 'guest' },
-    { label: 'Cửa hàng', id: 'shop', minRole: 'guest' },
+    { label: 'Danh Mục', id: 'shop', minRole: 'guest' },
     { label: 'Blog', id: 'blog', minRole: 'guest' },
     { label: 'Quản trị', id: 'admin', minRole: 'admin' },
   ];
